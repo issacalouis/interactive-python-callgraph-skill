@@ -24,9 +24,10 @@ Create a review-oriented HTML graph whose nodes are Python functions and whose d
 
 - Keep each function as a compact block.
 - Draw arrows from callee to caller so dependencies flow toward entry points.
-- Hovering opens the exact source beside the node.
-- Clicking pins the source window.
-- Provide search, fit-to-screen, close, and copy-source controls.
+- Keep the graph visible while a responsive side inspector shows the exact source.
+- Hovering previews source; clicking pins it for review.
+- Show clickable caller and callee function links in the inspector without adding relationship nodes to the graph.
+- Provide search, fit-to-screen, layout-direction, close, and copy-source controls.
 - Use color only to distinguish dependency depth or broad calculation stages; never replace actual code with descriptions.
 
 ## Command
