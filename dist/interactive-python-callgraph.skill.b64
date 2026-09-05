@@ -1,0 +1,15 @@
+=[IO.File]::ReadAllBytes : The term '=[IO.File]::ReadAllBytes' is not recognized as the name of a cmdlet, function, scr
+ipt file, or operable program. Check the spelling of the name, or if a path was included, verify that the path is corre
+ct and try again.
+At line:1 char:1
++ =[IO.File]::ReadAllBytes('result\interactive-python-callgraph.skill') ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (=[IO.File]::ReadAllBytes:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+ 
+Cannot find an overload for "ToBase64String" and the argument count: "0".
+At line:1 char:72
++ ... ult\interactive-python-callgraph.skill'); [Convert]::ToBase64String()
++                                               ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [], MethodException
+    + FullyQualifiedErrorId : MethodCountCouldNotFindBest
