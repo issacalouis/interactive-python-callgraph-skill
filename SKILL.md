@@ -24,8 +24,9 @@ Create a review-oriented HTML graph whose nodes are Python functions and whose d
 
 - Keep each function as a compact block.
 - Draw arrows from callee to caller so dependencies flow toward entry points.
-- Keep the graph visible while a responsive side inspector shows the exact source.
-- Hovering previews source; clicking pins it for review.
+- Keep a permanently visible responsive source inspector beside the graph from initial load, including an empty state. Selecting or clearing a function must not change the graph's width or position.
+- Open source only on explicit node clicks. Hover must never open, close, or resize an inspector. Canvas clicks and dragging keep the inspector open; close explicitly or with Escape.
+- Use a restrained scientific palette: off-white canvas, muted blue/teal/ochre/purple depth colors, thin borders, and readable light-background source. Avoid gradients and heavy shadows.
 - Show clickable caller and callee function links in the inspector without adding relationship nodes to the graph.
 - Provide search, fit-to-screen, layout-direction, close, and copy-source controls.
 - Use color only to distinguish dependency depth or broad calculation stages; never replace actual code with descriptions.
@@ -37,4 +38,3 @@ python scripts/build_callgraph.py SOURCE --output OUTPUT.html [--roots function_
 ```
 
 The script uses only the Python standard library. It reads notebooks as JSON and Python files as text.
-
