@@ -26,7 +26,7 @@ Create a review-oriented HTML graph whose nodes are Python functions and whose d
 - Draw arrows from callee to caller so dependencies flow toward entry points.
 - Keep a permanently visible responsive source inspector beside the graph from initial load, including an empty state. Selecting or clearing a function must not change the graph's width or position.
 - Open source only on explicit node clicks. Hover must never open, close, or resize an inspector. Canvas clicks and dragging keep the inspector open; close explicitly or with Escape.
-- Use a restrained scientific palette: off-white canvas, muted blue/teal/ochre/purple depth colors, thin borders, and readable light-background source. Avoid gradients and heavy shadows.
+- Use a restrained scientific palette with muted blue/teal/ochre/purple depth colors and readable light-background source. Soft gradients, a subtle dot grid, and light shadows may add depth; keep decoration low contrast and subordinate to functions and code.
 - Show clickable caller and callee function links in the inspector without adding relationship nodes to the graph.
 - Provide search, fit-to-screen, layout-direction, close, and copy-source controls.
 - Use color only to distinguish dependency depth or broad calculation stages; never replace actual code with descriptions.
