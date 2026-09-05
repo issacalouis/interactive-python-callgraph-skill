@@ -30,6 +30,7 @@ Create a review-oriented HTML graph whose nodes are Python functions and whose d
 - Show clickable caller and callee function links in the inspector without adding relationship nodes to the graph.
 - Provide search, fit-to-screen, layout-direction, close, and copy-source controls.
 - Use color only to distinguish dependency depth or broad calculation stages; never replace actual code with descriptions.
+- Set node fill, border, hover, and selected colors explicitly from the same muted palette so library defaults cannot introduce saturated colors during interaction.
 
 ## Command
 
