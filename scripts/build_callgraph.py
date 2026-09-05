@@ -83,7 +83,22 @@ def build_html(source_path: Path, functions: dict[str, str], edges: set[tuple[st
     shown_edges = sorted([edge for edge in edges if edge[0] in selected and edge[1] in selected])
     depths = depth_map(selected, set(shown_edges))
     payload = json.dumps(shown, ensure_ascii=False).replace("</", "<\\/")
-    node_data = json.dumps([{"id": n, "label": n, "level": depths[n], "group": min(depths[n], 5)} for n in shown], ensure_ascii=False)
+    palette = [
+        ("#E3EDF8", "#91ABC8", "#CEDFF2"),
+        ("#E1EFEB", "#8AAFA3", "#CBE3DA"),
+        ("#ECE7F4", "#AC9DBF", "#DDD3EB"),
+        ("#F5EADB", "#C5AA84", "#EFDDC3"),
+        ("#F1E4E7", "#BC9AA4", "#E8D2D9"),
+        ("#E4EBEF", "#98ACB8", "#D2DFE6"),
+    ]
+    node_rows = []
+    for name in shown:
+        background, border, highlight = palette[min(depths[name], 5)]
+        node_rows.append({"id": name, "label": name, "level": depths[name],
+                          "color": {"background": background, "border": border,
+                                    "highlight": {"background": highlight, "border": border},
+                                    "hover": {"background": highlight, "border": border}}})
+    node_data = json.dumps(node_rows, ensure_ascii=False)
     edge_data = json.dumps([{"from": a, "to": b} for a, b in shown_edges], ensure_ascii=False)
     title = html.escape(f"{source_path.name} 函数源码调用图")
     return f'''<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{title}</title>
